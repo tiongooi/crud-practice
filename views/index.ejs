@@ -1,0 +1,17 @@
+<h1>Welcome to CRUD Practice</h1>
+
+<form action="/" method="post">
+  <input type="text" name="content">
+  <input type="submit" value="Post">
+</form>
+
+<ol>
+<% posts.forEach(post => { %>
+ <li><%=  post.content %></li>
+ <a href="/post/<%= post._id %>/edit">Edit</a>
+ <a href="post/<%= post._id %>/delete">Delete</a>
+ <a href="/api/<%= post._id %>">Get API</a>
+<% }); %>
+</ol>
+
+<a href="/api/all">Get API</a>
